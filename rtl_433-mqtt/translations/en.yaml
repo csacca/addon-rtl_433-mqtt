@@ -1,0 +1,11 @@
+---
+configuration:
+  device:
+    name: Device
+    description: Device
+  verbose:
+    name: Verbose
+    description: Verbose
+  frequency:
+    name: Frequency
+    description: Frequency
