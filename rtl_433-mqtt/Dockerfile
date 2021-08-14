@@ -25,7 +25,7 @@ ARG rtl_433_git_revision=21.05
 RUN git checkout ${rtl_433_git_revision}
 WORKDIR /build/rtl_433/build
 RUN \ 
-  cmake \
+  cmake ../ \
   && make -j 4 \
   && make DESTDIR=/build/root/ install
 
