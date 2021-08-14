@@ -1,17 +1,14 @@
-
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
 # rtl_433 to MQTT hass.io addon
 # Configures rtl_433
 # ==============================================================================
 
-readonly CONF=/etc/rtl_433.conf
 declare verbose
 declare host
 declare port
 declare username
 declare password
-declare topic
 declare device
 declare frequency
 
@@ -35,17 +32,17 @@ else
 
 fi
 
-verbose = $(bashio::config 'verbose')
-device = $(bashio::config 'device')
-frequency = $(bashio::config 'frequency')
+verbose=$(bashio::config 'verbose')
+device=$(bashio::config 'device')
+frequency=$(bashio::config 'frequency')
 
-retain = 0
+retain=0
 
 (
     echo "## General"
     echo "verbose ${verbose}"
     echo "## Data output: MQTT"
-    echo "output mqtt://${host}:${post},user=${username},pass=${password},retain=${retain}"
+    echo "output mqtt://${host}:${port},user=${username},pass=${password},retain=${retain}"
     echo ""
     echo "## Tuner options"
     echo "device ${device}"
