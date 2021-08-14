@@ -24,17 +24,16 @@ WORKDIR /build/rtl_433
 ARG rtl_433_git_revision = 21.05
 RUN git checkout ${rtl_433_git_revision}
 WORKDIR /build/rtl_433/build
-RUN cmake
-RUN make -j 4
+RUN \ 
+  cmake \
+  && make -j 4
 
-WORKDIR /build/root
-WORKDIR /build/rtl_433/build
 RUN make DESTDIR=/build/root/ install
-RUN ls -lah /build/root
 
 #
 # Main container
 #
+# hadolint ignore=DL3006
 FROM $BUILD_FROM
 
 ENV LANG C.UTF-8
@@ -42,9 +41,10 @@ ENV LANG C.UTF-8
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
+# hadolint ignore=DL3018
 RUN apk add --no-cache libusb \
     librtlsdr
-WORKDIR /root
+
 COPY --from=builder /build/root/ /
 
 # Copy root filesystem
