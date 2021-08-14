@@ -14,7 +14,7 @@
     "frequency": 433920000
   },
   "schema": {
-    "rtl_serial": "str",
+    "device": "str",
     "verbose": "list(0|1|2|3|4)",
     "frequency": "int"
   }
