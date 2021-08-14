@@ -1,4 +1,5 @@
 # addon-rtl_433-mqtt
+
 rtl_433 to MQTT hass.io addon
 
 ## Installation
@@ -27,7 +28,6 @@ frequency: 433920000
 ### Option: `verbose`
 
 ### Option: `frequency`
-
 
 ## Changelog & Releases
 
