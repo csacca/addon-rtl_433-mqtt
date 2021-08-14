@@ -26,9 +26,8 @@ RUN git checkout ${rtl_433_git_revision}
 WORKDIR /build/rtl_433/build
 RUN \ 
   cmake \
-  && make -j 4
-
-RUN make DESTDIR=/build/root/ install
+  && make -j 4 \
+  && make DESTDIR=/build/root/ install
 
 #
 # Main container
