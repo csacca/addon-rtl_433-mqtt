@@ -48,9 +48,3 @@ retain=0
     echo "device ${device}"
     echo "frequency ${frequency}"
 ) >> /etc/rtl_433.conf
-
-# Debugging
-cat /etc/rtl_433.conf
-sleep 60
-/usr/local/bin/rtl_433 -V
-sleep 30
