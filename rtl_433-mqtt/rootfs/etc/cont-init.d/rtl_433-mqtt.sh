@@ -52,5 +52,5 @@ retain=0
 # Debugging
 cat /etc/rtl_433.conf
 sleep 60
-exec /usr/local/bin/rtl_433
+/usr/local/bin/rtl_433 -V
 sleep 30
