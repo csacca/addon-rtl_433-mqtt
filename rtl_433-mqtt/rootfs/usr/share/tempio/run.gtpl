@@ -6,4 +6,4 @@
 
 bashio::log.info "Starting rtl_433..."
 
-exec /usr/local/bin/rtl_433 -c /etc/rtl_433.conf -C si -M newmodel
+exec /usr/local/bin/rtl_433 -c {{ .conf_file }} -C si -M newmodel > >(tee -a {{ .log_dir }}/stdout.log) 2> >(tee -a {{ .log_dir }}/stderr.log >&2)
