@@ -7,7 +7,7 @@ verbose {{ .verbose }}
 output mqtt://{{ .host }}:{{ .port }},user={{ .username }},pass={{ .password }},retain={{ .retain }}
 
 ## Tuner options
-device {{ .device }}
+# device {{ .device }}
 frequency {{ .frequency }}
 
 ## Protocols to enable (command line option "-R")

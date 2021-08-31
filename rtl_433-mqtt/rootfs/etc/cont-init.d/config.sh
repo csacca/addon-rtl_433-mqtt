@@ -75,6 +75,7 @@ for config in $(bashio::config 'devices|keys'); do
     fi
 
     bashio::var.json \
+        device "${device}" \
         conf_file "/etc/rtl_433/rtl_433_${i}.conf" \
         log_dir "/addons/rlt_433-mqtt/rtl_433_${i}" |
         tempio \
