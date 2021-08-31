@@ -89,5 +89,8 @@ for config in $(bashio::config 'devices|keys'); do
 
     chmod a+rx /etc/services.d/rtl_433_${i}/finish
 
+    cp /etc/rtl_433/rtl_433_${i}.conf /addons/rlt_433-mqtt/rtl_433_${i}/
+    cp /etc/services.d/rtl_433_${i}/run /addons/rlt_433-mqtt/rtl_433_${i}/
+
     ((i += 1))
 done
