@@ -58,7 +58,7 @@ for config in $(bashio::config 'devices|keys'); do
         port "${port}" \
         username "${username}" \
         password "${password}" \
-        retian "${retain}" \
+        retain "${retain}" \
         device "${device}" \
         verbose "${verbose}" \
         frequency "${frequency}" |
