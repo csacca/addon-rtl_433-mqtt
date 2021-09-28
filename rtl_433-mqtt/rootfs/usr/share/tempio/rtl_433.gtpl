@@ -10,6 +10,9 @@ output mqtt://{{ .host }}:{{ .port }},user={{ .username }},pass={{ .password }},
 # device {{ .device }}
 frequency {{ .frequency }}
 
+# Use "level" to add Modulation, Frequency, RSSI, SNR, and Noise meta data.
+report_meta level
+
 ## Protocols to enable (command line option "-R")
 
 protocol 1   # Silvercrest Remote Control
